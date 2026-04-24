@@ -4,19 +4,19 @@ Aplicación del clima desarrollada con HTML, CSS y JavaScript vanilla, utilizand
 
 ---
 
-## 🌐 Demo en vivo
+##  Demo en vivo
 
-👉 [Ver online](https://TU-LINK-AQUI.netlify.app)
+👉 [Ver online](https://appdelclimaonline.netlify.app)
 
 ---
 
-## 📸 Vista previa
+##  Vista previa
 
 ![Vista previa](vistaPrevia.png)
 
 ---
 
-## ⚙️ Funcionalidades
+## Funcionalidades
 
 - Buscar clima por ciudad
 - Seleccionar país opcional
@@ -30,7 +30,7 @@ Aplicación del clima desarrollada con HTML, CSS y JavaScript vanilla, utilizand
 
 ---
 
-## 🧠 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - HTML5
 - CSS3
@@ -39,7 +39,7 @@ Aplicación del clima desarrollada con HTML, CSS y JavaScript vanilla, utilizand
 
 ---
 
-## 📚 Aprendizajes
+## Aprendizajes
 
 Este proyecto me permitió practicar:
 
