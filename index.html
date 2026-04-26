@@ -3,53 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aplicacion del clima desarrollada con JavaScript y la API de OpenWeather.">
   <title>Weather App</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <main class="page-shell">
+    <section class="container">
+      <p class="eyebrow">Clima en tiempo real</p>
+      <h1>Weather App</h1>
+      <p class="intro">
+        Consulta el clima actual de una ciudad con datos en tiempo real y una vista clara de las condiciones principales.
+      </p>
 
-  <div class="container">
+      <div class="search-card">
+        <label class="sr-only" for="cityInput">Ciudad</label>
+        <input type="text" id="cityInput" placeholder="Ingresa una ciudad">
 
-    <h1>🌦️ Weather App</h1>
+        <label class="sr-only" for="countrySelect">Pais</label>
+        <select id="countrySelect">
+          <option value="">Pais (opcional)</option>
+          <option value="AR">Argentina</option>
+          <option value="PE">Peru</option>
+          <option value="EC">Ecuador</option>
+          <option value="CL">Chile</option>
+          <option value="UY">Uruguay</option>
+          <option value="ES">Espana</option>
+          <option value="MX">Mexico</option>
+        </select>
 
-    <div class="search">
+        <button type="button" id="searchBtn">Buscar clima</button>
+      </div>
 
-      <input type="text" id="cityInput" placeholder="Ciudad...">
+      <p id="helperText" class="helper-text">Puedes buscar solo por ciudad o reforzar la busqueda con un pais.</p>
+      <p id="error" class="error hidden" aria-live="polite"></p>
+      <p id="loading" class="loading hidden">Consultando informacion meteorologica...</p>
 
-      <select id="countrySelect">
-        <option value="">País (opcional)</option>
-        <option value="AR">Argentina</option>
-        <option value="PE">Perú</option>
-        <option value="EC">Ecuador</option>
-        <option value="CL">Chile</option>
-        <option value="UY">Uruguay</option>
-        <option value="ES">España</option>
-        <option value="MX">México</option>
-      </select>
+      <article id="weatherCard" class="weather-card hidden" aria-live="polite">
+        <div class="card-header">
+          <div>
+            <p class="card-label">Resultado actual</p>
+            <h2 id="cityName"></h2>
+          </div>
 
-      <button id="searchBtn">Buscar</button>
+          <img
+            id="weatherIcon"
+            class="weather-icon hidden"
+            alt="Icono del clima"
+            width="88"
+            height="88"
+          >
+        </div>
 
-    </div>
+        <div class="hero-metric">
+          <p id="temp" class="temperature"></p>
+          <p id="description" class="description"></p>
+        </div>
 
-    <p id="error" class="error hidden"></p>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">Sensacion termica</span>
+            <strong id="feelsLike"></strong>
+          </div>
 
-    <div id="weatherCard" class="card hidden">
+          <div class="stat-card">
+            <span class="stat-label">Humedad</span>
+            <strong id="humidity"></strong>
+          </div>
 
-      <h2 id="cityName"></h2>
+          <div class="stat-card">
+            <span class="stat-label">Presion</span>
+            <strong id="pressure"></strong>
+          </div>
 
-      <p id="temp"></p>
-      <p id="description"></p>
-
-      <hr>
-
-      <p id="feelsLike"></p>
-      <p id="humidity"></p>
-      <p id="pressure"></p>
-      <p id="wind"></p>
-
-    </div>
-
-  </div>
+          <div class="stat-card">
+            <span class="stat-label">Viento</span>
+            <strong id="wind"></strong>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
 
   <script src="app.js"></script>
 </body>
