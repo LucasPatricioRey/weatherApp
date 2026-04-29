@@ -26,6 +26,14 @@ Aplicacion del clima desarrollada con HTML, CSS y JavaScript vanilla, utilizando
 - JavaScript vanilla
 - OpenWeather API
 
+## Configuracion
+
+Crear `config.js` usando como base `config.example.js`:
+
+```js
+window.OPENWEATHER_API_KEY = "tu_api_key_de_openweather";
+```
+
 ## Aprendizajes
 
 Este proyecto me permitio practicar:

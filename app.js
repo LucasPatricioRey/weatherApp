@@ -1,4 +1,4 @@
-const API_KEY = "6b1ba0b075c152090f76a0e66c0ee774";
+const API_KEY = window.OPENWEATHER_API_KEY;
 const API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
 const cityInput = document.getElementById("cityInput");
@@ -29,6 +29,10 @@ function buildUrl(city, country = "") {
   });
 
   return `${API_BASE_URL}?${params.toString()}`;
+}
+
+function hasApiKey() {
+  return typeof API_KEY === "string" && API_KEY.trim().length > 0;
 }
 
 function capitalizeText(text) {
@@ -92,6 +96,11 @@ async function getWeather() {
   const city = cityInput.value.trim();
   const country = countrySelect.value;
 
+  if (!hasApiKey()) {
+    showError("Falta configurar la API key de OpenWeather en config.js.");
+    return;
+  }
+
   if (!city) {
     showError("Ingresa una ciudad para realizar la busqueda.");
     return;
@@ -136,3 +145,7 @@ cityInput.addEventListener("keydown", event => {
     getWeather();
   }
 });
+
+if (!hasApiKey()) {
+  showError("Falta configurar la API key de OpenWeather en config.js.");
+}
