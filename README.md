@@ -35,3 +35,7 @@ Este proyecto me permitio practicar:
 - Renderizado dinamico en el DOM
 - Validacion de entradas
 - Diseño de interfaces para proyectos frontend chicos
+
+## Licencia
+
+MIT
